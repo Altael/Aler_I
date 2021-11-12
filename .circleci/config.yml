@@ -6,8 +6,6 @@ executors:
       
 jobs:
   launch-bot:
-    environment:
-      TOKEN: ODQxMjUzNTcxMTMxMjExODA2.YJkEcQ.DSEYKDFJsT4nFW05z2WmDlfeF3M
     executor: my-custom-executor
     steps:
       - checkout
