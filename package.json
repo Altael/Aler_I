@@ -1,0 +1,22 @@
+{
+  "name": "Aler-I-Bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "aler": "run-func aler.js aler"
+  },
+  "keywords": [],
+  "author": "Aler II",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/dialogflow": "^3.5.0",
+    "@replit/database": "^2.0.1",
+    "bash.im": "^1.1.1",
+    "discord.js": "^12.5.3",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "run-func": "^1.0.5"
+  }
+}
