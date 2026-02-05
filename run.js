@@ -13,6 +13,7 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 // api info for LM Studio (OpenAI-compatible)
 const TOKEN = process.env.DISCORD_TOKEN;
 const API_URL = process.env.LMS_API_URL ?? 'http://localhost:1234/v1/chat/completions';
+const TEMPERATURE = Number.parseFloat(process.env.LMS_TEMPERATURE ?? '');
 const ALLOWED_USER_IDS = (process.env.ALLOWED_USER_IDS ?? '')
   .split(',')
   .map(id => id.trim())
@@ -21,7 +22,7 @@ const ALLOWED_USER_IDS = (process.env.ALLOWED_USER_IDS ?? '')
 const LOG_FILE_PATH = path.join(__dirname, 'log.json');
 
 async function getContextMessagesFromChannel(message, limit) {
-  const fetched = await message.channel.messages.fetch({ limit: limit + 1 });
+  const fetched = await message.channel.messages.fetch({ limit: limit });
   const recent = Array.from(fetched.values())
     .filter(item => item.id !== message.id)
     .sort((a, b) => a.createdTimestamp - b.createdTimestamp);
@@ -84,13 +85,15 @@ async function generateResponse(prompt, contextMessages) {
       ...(contextMessages ?? []),
       { role: 'user', content: prompt }
     ],
-    stream: false
+    stream: false,
+    ...(Number.isFinite(TEMPERATURE) ? { temperature: TEMPERATURE } : {})
   };
 
   try {
     const response = await axios.post(API_URL, data, {
       headers: { 'Content-Type': 'application/json' }
     });
+    console.log('Prompt: ', JSON.stringify(data));
     console.log('Raw Response Content:', JSON.stringify(response.data));
 
     const assistantMessage = response.data?.choices?.[0]?.message?.content;
@@ -126,13 +129,14 @@ client.on(Events.MessageCreate, async message => {
   const shouldRespond = isDm || message.mentions.has(client.user);
   if (shouldRespond) {
     let prompt = message.content;
-    prompt = `${message.author.displayName ?? message.author.username} says: ${prompt}`;
+    // prompt = `${message.author.displayName ?? message.author.username} says: ${prompt}`;
 
     // try and catch are used to check if the bot has permission to send in the channel.
     try {
       await message.channel.sendTyping();
       if (prompt) {
-        const contextMessages = await getContextMessagesFromChannel(message, 30);
+        //const contextMessages = await getContextMessagesFromChannel(message, 30);
+        const contextMessages = [];
         const response = await generateResponse(prompt, contextMessages);
         await message.channel.send(response.text);
         appendLogEntry({
