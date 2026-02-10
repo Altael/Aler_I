@@ -412,8 +412,8 @@ client.on(Events.MessageCreate, async message => {
         }
 
         console.log('[MessageCreate] fallback to normal response');
-        //const contextMessages = await getContextMessagesFromChannel(message, 30);
-        const contextMessages = [];
+        const contextMessages = await getContextMessagesFromChannel(message, 10);
+        //const contextMessages = [];
         const response = await generateResponse(prompt, contextMessages);
         console.log('[MessageCreate] normal response received', {
           hasText: Boolean(response?.text),
