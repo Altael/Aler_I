@@ -66,8 +66,9 @@
     </style>
 </head>
 <body class="bg-bg text-white antialiased">
+
 <input id="mobile-menu-toggle" type="checkbox" class="peer/mobile-menu sr-only">
-<header class="bg-bg3 flex items-center justify-between px-[20px] md:px-[50px] py-[20px] xl:py-0 w-full max-w-[1680px] mx-auto sticky top-0 z-[60]">
+<header class="bg-bg3 flex items-center justify-between px-[20px] md:px-[50px] py-[20px] xl:py-0 w-full sticky top-0 z-[60]">
     <img class="w-[111px] md:w-[122px] xl:w-[152px]" src="img/logo.svg" alt="Schcherban Bau">
     <nav class="items-center hidden xl:flex">
         <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Home</a>
@@ -77,7 +78,8 @@
             <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black group-hover:[&:not(:hover)]:bg-menu-active-bg border-t border-3 border-transparent group-hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">
                 <span class="flex items-center gap-[8px]">
                     <span>Leistungen</span>
-                    <img src="img/icons/chevron-down.svg" alt="" class="size-[8px]">
+                    <img src="img/icons/chevron-down.svg" alt="" class="size-[8px] group-hover:hidden">
+                    <img src="img/icons/chevron-up.svg" alt="" class="size-[8px] hidden group-hover:block">
                 </span>
             </a>
             <div class="absolute top-full left-0 min-w-[240px] bg-menu-active-bg opacity-0 pointer-events-none translate-y-[8px] transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
@@ -120,7 +122,22 @@
             <span class="text-[rgb(37_211_102)] hover:text-[rgb(37_211_102)] font-bold">WHATSAPP</span>
         </a>
         <button class="bg-primary hover:bg-primary-hover text-black font-bold font-[Roboto] py-[8px] px-[16px] md:px-[24px] rounded-[45px] text-[12px]/[24px] md:text-[14px] uppercase">Jetzt anfragen</button>
-        <a href="#" class="hidden md:flex bg-button-bg hover:bg-button-bg-hover items-center justify-center h-[40px] w-[56px] rounded-[45px]"><img class="w-[28px]" src="img/icons/flags/de.svg" alt="DE"></a>
+        <div class="relative hidden md:block">
+            <input id="language-toggle" type="checkbox" class="peer/language sr-only">
+            <label for="language-toggle" class="bg-button-bg hover:bg-button-bg-hover flex items-center justify-center h-[40px] min-w-[56px] px-[12px] rounded-[45px] cursor-pointer">
+                <img class="w-[28px]" src="img/icons/flags/de.svg" alt="DE">
+            </label>
+            <div class="absolute top-full right-0 mt-[8px] w-[222px] bg-menu-active-bg opacity-0 pointer-events-none translate-y-[8px] transition-all duration-200 peer-checked/language:opacity-100 peer-checked/language:pointer-events-auto peer-checked/language:translate-y-0 z-50 divide-y divide-bg2">
+                <a href="#" class="flex items-center gap-[8px] px-[16px] py-[21px] text-menu-text hover:text-white hover:bg-black">
+                    <img src="img/icons/flags/de.svg" alt="Deutsch" class="w-[28px]">
+                    <span>Deutsch</span>
+                </a>
+                <a href="#" class="flex items-center gap-[8px] px-[16px] py-[21px] text-menu-text hover:text-white hover:bg-black">
+                    <img src="img/icons/flags/gb.svg" alt="English" class="w-[28px]">
+                    <span>English</span>
+                </a>
+            </div>
+        </div>
         <label for="mobile-menu-toggle" class="xl:hidden bg-button-bg hover:bg-button-bg-hover flex items-center justify-center h-[40px] w-[56px] rounded-[45px] cursor-pointer peer-checked/mobile-menu:hidden" aria-label="Menü öffnen">
             <img class="size-[32px]" src="img/icons/menu.svg" alt="Menü">
         </label>
@@ -129,21 +146,54 @@
         </label>
     </nav>
 </header>
-
 <label for="mobile-menu-toggle" class="fixed top-[80px] right-0 bottom-0 left-0 z-40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 peer-checked/mobile-menu:opacity-100 peer-checked/mobile-menu:pointer-events-auto" aria-label="Menü schließen"></label>
-
-<aside class="fixed top-[80px] right-0 bottom-0 z-50 w-[250px] bg-bg3 border-l border-white/10 p-[24px] flex flex-col gap-[20px] translate-x-full transition-transform duration-300 peer-checked/mobile-menu:translate-x-0">
-    <div class="flex items-center justify-between">
-        <span class="uppercase text-primary font-bold">Menü</span>
-    </div>
-    <nav class="flex flex-col gap-[10px]">
-        <a href="#" class="text-menu-text hover:text-menu-active-text">Home</a>
-        <a href="#" class="text-menu-text hover:text-menu-active-text">Über uns</a>
-        <a href="#" class="text-menu-text hover:text-menu-active-text">Vorteile</a>
-        <a href="#" class="text-menu-text hover:text-menu-active-text">Leistungen</a>
-        <a href="#" class="text-menu-text hover:text-menu-active-text">Arbeitsablauf</a>
-        <a href="#" class="text-menu-text hover:text-menu-active-text">Projekte</a>
-        <a href="#" class="text-menu-text hover:text-menu-active-text">Kontakt</a>
+<aside class="fixed top-[80px] right-0 bottom-0 z-50 w-[250px] bg-bg3 py-[24px] flex flex-col gap-[20px] translate-x-full transition-transform duration-300 peer-checked/mobile-menu:translate-x-0">
+    <nav class="flex flex-col divide-y divide-bg2">
+        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Home</a>
+        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Über uns</a>
+        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Vorteile</a>
+        <div>
+            <input id="mobile-services-toggle" type="checkbox" class="peer/services sr-only">
+            <label for="mobile-services-toggle" class="flex items-center justify-between text-menu-text hover:text-menu-active-text hover:bg-black px-[12px] py-[14px] cursor-pointer peer-checked/services:[&_.chev-down]:hidden peer-checked/services:[&_.chev-up]:block">
+                <span>Leistungen</span>
+                <span class="relative size-[8px]">
+                    <img src="img/icons/chevron-down.svg" alt="" class="chev-down absolute inset-0 size-[8px]">
+                    <img src="img/icons/chevron-up.svg" alt="" class="chev-up absolute inset-0 size-[8px] hidden">
+                </span>
+            </label>
+            <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked/services:max-h-[320px] bg-menu-active-bg">
+                <a href="#" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
+                    <span class="flex items-center gap-[8px]">
+                        <span class="size-[8px] rounded-full bg-job-1"></span>
+                        <span>Innenausbau</span>
+                    </span>
+                </a>
+                <div class="h-px bg-bg2"></div>
+                <a href="#" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
+                    <span class="flex items-center gap-[8px]">
+                        <span class="size-[8px] rounded-full bg-job-2"></span>
+                        <span>Möbel & Montage</span>
+                    </span>
+                </a>
+                <div class="h-px bg-bg2"></div>
+                <a href="#" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
+                    <span class="flex items-center gap-[8px]">
+                        <span class="size-[8px] rounded-full bg-job-3"></span>
+                        <span>Komplettservice</span>
+                    </span>
+                </a>
+                <div class="h-px bg-bg2"></div>
+                <a href="#" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
+                    <span class="flex items-center gap-[8px]">
+                        <span class="size-[8px] rounded-full bg-job-4"></span>
+                        <span>Vorbereitung & Demontage</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Arbeitsablauf</a>
+        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Projekte</a>
+        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Kontakt</a>
     </nav>
 </aside>
 
@@ -160,7 +210,7 @@
     </div>
 </section>
 
-<section class="py-[90px] flex flex-col items-center gap-[90px]">
+<section class="py-[50px] md:py-[90px] flex flex-col items-center gap-[90px] px-[20px] max-w-[640px] mx-auto">
     <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]/[59px]">Über uns</h2>
 
     <p class="text-[16px]/[25px] max-w-[900px] mx-auto text-center">
@@ -178,7 +228,7 @@
     </div>
 </section>
 
-<section class="py-[90px] flex flex-col items-center gap-[90px] bg-bg2">
+<section class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[90px] bg-bg2">
     <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">Leistungen</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         <div class="relative w-[306px] h-[436px] flex items-end justify-center rounded-[10px] overflow-hidden">
@@ -220,7 +270,7 @@
     </div>
 </section>
 
-<section class="py-[90px] flex flex-col items-center gap-[70px]">
+<section class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
     <div>
         <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">Vorteile</h2>
         <h3 class="text-center text-[16px]/[25px] mt-[24px]">Effizient – klar – zuverlässig</h3>
@@ -250,12 +300,14 @@
     <button class="bg-primary text-black font-bold font-[Roboto] uppercase py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
 </section>
 
-<article class="bg-bg2 py-[100px]">
+<article class="bg-bg2 py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
     <div class="max-w-[1328px] mx-auto flex flex-col xl:flex-row gap-[50px] justify-between items-center">
-        <div class="flex flex-col items-start gap-[40px]">
+        <div class="flex flex-col items-start gap-[40px] max-w-[600px]">
             <h2 class="text-job-1 text-center md:text-start w-full uppercase text-[36px] md:text-[58px]/[58px] font-bold">Innenausbau</h2>
-            <div class="text-[16px]/[25px] max-w-[600px]">
-                <p>Im Bereich Innenausbau in München bieten wir professionelle Lösungen für Wohnungen, Häuser und Gewerberäume. Unser Leistungsspektrum umfasst Trockenbau, Spachtelarbeiten, Wand- und Deckenverkleidungen, Bodenverlegung sowie Türen- und Fenstermontage. Wir arbeiten nach deutschen Qualitätsstandards und legen großen Wert auf präzise Ausführung, saubere Baustellen und termingerechte Fertigstellung.</p>
+            <div class="text-[16px]/[25px]">
+                <p>
+                    Im Bereich Innenausbau in München bieten wir professionelle Lösungen für Wohnungen, Häuser und Gewerberäume. Unser Leistungsspektrum umfasst Trockenbau, Spachtelarbeiten, Wand- und Deckenverkleidungen, Bodenverlegung sowie Türen- und Fenstermontage. Wir arbeiten nach deutschen Qualitätsstandards und legen großen Wert auf präzise Ausführung, saubere Baustellen und termingerechte Fertigstellung.
+                </p>
                 <ul class="list-disc list-inside mt-[24px]">
                     <li>Trockenbau</li>
                     <li>Spachtelarbeiten</li>
@@ -264,13 +316,80 @@
                     <li>Sockelleistenmontage</li>
                 </ul>
             </div>
-            <button class="bg-job-1 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
+            <button class="bg-job-1 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</button>
         </div>
-        <img class="h-[522px] grayscale rounded-[30px]" src="img/job-list-1.jpg" alt="Innenausbau">
+        <img class="h-[522px] xl:w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-1.jpg" alt="Innenausbau">
     </div>
 </article>
 
-<section class="bg-bg2 py-[90px] flex flex-col items-center gap-[70px] px-[20px]">
+<article class="py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
+    <div class="max-w-[1328px] mx-auto flex flex-col-reverse xl:flex-row-reverse gap-[50px] justify-between items-center">
+        <div class="flex flex-col items-start gap-[40px] max-w-[600px]">
+            <h2 class="text-job-2 text-center md:text-start w-full uppercase text-[36px] md:text-[58px]/[58px] font-bold">moebel-montage</h2>
+            <div class="text-[16px]/[25px]">
+                <p>
+                    Unser Montageservice in München umfasst die fachgerechte Montage von Möbeln, Küchen und Einbaulösungen. Wir übernehmen den Aufbau von Schränken, Regalen und kompletten Möbelsystemen – präzise, zuverlässig und nach Herstellerangaben. Mit unserer Erfahrung garantieren wir eine saubere und professionelle Umsetzung für Privat- und Geschäftskunden.
+                </p>
+                <ul class="list-disc list-inside mt-[24px]">
+                    <li>Küchenmontage</li>
+                    <li>Möbelaufbau</li>
+                    <li>Einbauschränke</li>
+                    <li>Arbeitsplattenmontage</li>
+                    <li>Endmontage</li>
+                </ul>
+            </div>
+            <button class="bg-job-2 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</button>
+        </div>
+        <img class="h-[522px] xl:max-w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-2.jpg" alt="Innenausbau">
+    </div>
+</article>
+
+<article class="bg-bg2 py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
+    <div class="max-w-[1328px] mx-auto flex flex-col xl:flex-row gap-[50px] justify-between items-center">
+        <div class="flex flex-col items-start gap-[40px] max-w-[600px]">
+            <h2 class="text-job-3 text-center md:text-start w-full uppercase text-[36px] md:text-[58px]/[58px] font-bold">KOMPLETTSERVICE</h2>
+            <div class="text-[16px]/[25px]">
+                <p>
+                    Mit unserem Komplettservice für Renovierungen in München übernehmen wir die gesamte Organisation Ihres Projekts. Von der Planung über die Baukoordination bis zur fertigen Umsetzung erhalten Sie alle Leistungen aus einer Hand. Für Elektro- und Sanitärarbeiten arbeiten wir mit lizenzierten deutschen Fachbetrieben zusammen, sodass Sie ein professionelles und rechtssicheres Ergebnis erhalten.
+                </p>
+                <ul class="list-disc list-inside mt-[24px]">
+                    <li>Projektplanung</li>
+                    <li>Baukoordination</li>
+                    <li>Materialbeschaffung</li>
+                    <li>Bauüberwachung</li>
+                    <li>Projektbegleitung</li>
+                </ul>
+            </div>
+            <button class="bg-job-3 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</button>
+        </div>
+        <img class="h-[522px] xl:max-w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-3.jpg" alt="Innenausbau">
+    </div>
+</article>
+
+<article class="py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
+    <div class="max-w-[1328px] mx-auto flex flex-col-reverse xl:flex-row-reverse gap-[50px] justify-between items-center">
+        <div class="flex flex-col items-start gap-[40px] max-w-[600px]">
+            <h2 class="text-job-4 text-center md:text-start w-full uppercase text-[36px] md:text-[58px]/[58px] font-bold">VORBEREITUNG & DEMONTAGE</h2>
+            <div class="text-[16px]/[25px]">
+                <p>
+                    Vor jeder Renovierung sind fachgerechte Vorbereitungs- und Demontagearbeiten entscheidend. Wir übernehmen den professionellen Rückbau alter Bauteile, das Entfernen von Bodenbelägen sowie die Vorbereitung der Räume für den weiteren Ausbau. Dazu gehören auch vorbereitende Elektro- und Sanitärarbeiten. Alle Arbeiten werden sauber, sicher und nach geltenden Vorschriften ausgeführt.
+                </p>
+                <ul class="list-disc list-inside mt-[24px]">
+                    <li>Demontage von Trennwänden</li>
+                    <li>Entfernung alter Bodenbeläge</li>
+                    <li>Baustellenvorbereitung</li>
+                    <li>Elektrovorbereitung</li>
+                    <li>Entsorgung</li>
+                    <li>Sanitäranschlüsse – über Partnerfirma</li>
+                </ul>
+            </div>
+            <button class="bg-job-4 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</button>
+        </div>
+        <img class="h-[522px] w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-4.jpg" alt="Innenausbau">
+    </div>
+</article>
+
+<section class="bg-bg2 py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
     <div>
         <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">Arbeitsablauf</h2>
         <h3 class="text-center text-[16px]/[25px] mt-[24px]">Effizient – klar – zuverlässig</h3>
@@ -309,7 +428,7 @@
     <button class="bg-primary text-black font-bold font-[Roboto] uppercase py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
 </section>
 
-<section class="py-[90px] flex flex-col items-center gap-[70px]">
+<section class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
     <div>
         <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">PROJEKTE</h2>
         <h3 class="text-center text-[16px]/[25px] mt-[24px]">Wir realisieren Renovierungen unterschiedlicher Art – von Einzelarbeiten bis zu Komplettprojekten aus einer Hand.</h3>
@@ -317,13 +436,13 @@
     <img src="img/gallery.png" alt="gallery">
 </section>
 
-<section class="py-[80px] bg-bg2">
+<section class="py-[50px] md:py-[80px] px-[20px] bg-bg2">
     <div class="flex flex-col gap-[48px] relative w-full max-w-[1600px] mx-auto overflow-hidden">
         <h2 class="uppercase text-center text-primary font-bold text-[27px] md:text-[58px]">Kundenbewertungen</h2>
-        <div class="flex content-stretch animate-carousel md:animate-none md:gap-[6px] xl:gap-[24px] md:text-body lg:text-body-lg">
+        <div class="flex content-stretch animate-carousel md:animate-none md:gap-[20px] xl:gap-[24px] md:text-body lg:text-body-lg">
 
-            <div class="shrink-0 md:flex-1 h-auto w-full bg-bg5 rounded-[20px]">
-                <div class="p-[25px] lg:pl-[24px] bg-menu flex flex-col gap-[40px] mx-auto w-fit h-full">
+            <div class="shrink-0 md:flex-1 h-auto w-full">
+                <div class="p-[25px] lg:pl-[24px] bg-bg5 rounded-[20px] flex flex-col gap-[40px] mx-auto w-fit h-full">
                     <div class="flex gap-[4px]">
                         <img src="img/icons/star-review.svg" class="w-[16px] h-[16px]" alt="star">
                         <img src="img/icons/star-review.svg" class="w-[16px] h-[16px]" alt="star">
@@ -336,8 +455,8 @@
                 </div>
             </div>
 
-            <div class="shrink-0 md:flex-1 h-auto w-full bg-bg5 rounded-[20px]">
-                <div class="p-[25px] lg:pl-[24px] bg-menu flex flex-col gap-[40px] mx-auto w-fit h-full">
+            <div class="shrink-0 md:flex-1 h-auto w-full">
+                <div class="p-[25px] lg:pl-[24px] bg-bg5 rounded-[20px] flex flex-col gap-[40px] mx-auto w-fit h-full">
                     <div class="flex gap-[4px]">
                         <img src="img/icons/star-review.svg" class="w-[16px] h-[16px]" alt="star">
                         <img src="img/icons/star-review.svg" class="w-[16px] h-[16px]" alt="star">
@@ -350,8 +469,8 @@
                 </div>
             </div>
 
-            <div class="shrink-0 md:flex-1 h-auto w-full bg-bg5 rounded-[20px]">
-                <div class="p-[25px] lg:pl-[24px] bg-menu flex flex-col gap-[40px] mx-auto w-fit h-full">
+            <div class="shrink-0 md:flex-1 h-auto w-full">
+                <div class="p-[25px] lg:pl-[24px] bg-bg5 rounded-[20px] flex flex-col gap-[40px] mx-auto w-fit h-full">
                     <div class="flex gap-[4px]">
                         <img src="img/icons/star-review.svg" class="w-[16px] h-[16px]" alt="star">
                         <img src="img/icons/star-review.svg" class="w-[16px] h-[16px]" alt="star">
@@ -368,11 +487,11 @@
     </div>
 </section>
 
-<nav class="py-[100px] max-w-[1328px] mx-auto flex flex-col xl:flex-row justify-between items-start gap-[58px]">
-    <div class="flex flex-col gap-[72px]">
+<nav class="py-[50px] md:py-[90px] px-[20px] max-w-[1328px] mx-auto flex flex-col xl:flex-row justify-between items-start gap-[58px]">
+    <div class="flex flex-col gap-[50px] md:gap-[72px]">
         <div class="flex flex-col gap-[16px] items-start">
             <img src="img/logo-mini.svg" alt="schcherban">
-            <p class="max-w-[372px] text-[14px]/[20px]">Ihr vertrauenswürdiger Handwerker in München Unser kleines Team bietet eine breite Palette an Bau- und Renovierungsdienstleistungen an, darunter Hausrenovierungen, Fassadensanierungen, Trockenbau und vieles mehr.</p>
+            <p class="md:max-w-[372px] text-[14px]/[20px]">Ihr vertrauenswürdiger Handwerker in München Unser kleines Team bietet eine breite Palette an Bau- und Renovierungsdienstleistungen an, darunter Hausrenovierungen, Fassadensanierungen, Trockenbau und vieles mehr.</p>
         </div>
         <div class="flex flex-col gap-[40px]">
             <div class="flex flex-col gap-[16px] text-[16px]/[20px]">
@@ -388,7 +507,7 @@
             </div>
         </div>
     </div>
-    <form class="text-form-text max-w-[522px] flex flex-col gap-[20px]">
+    <form class="text-form-text md:max-w-[522px] flex flex-col gap-[20px]">
         <input type="text" placeholder="Name / Vor- und Nachname *" class="px-[20px] py-[12px] bg-form-bg-active placeholder-shown:bg-form-bg text-white focus:outline-none focus:ring-2 ring-white focus:bg-form-active rounded-[30px] w-full placeholder:text-form-text">
         <input type="text" placeholder="E-Mail-Adresse*" class="px-[20px] py-[12px] bg-form-bg-active placeholder-shown:bg-form-bg text-white focus:outline-none focus:ring-2 ring-white focus:bg-form-active rounded-[30px] w-full placeholder:text-form-text">
         <input type="text" placeholder="Telefonnummer" class="px-[20px] py-[12px] bg-form-bg-active placeholder-shown:bg-form-bg text-white focus:outline-none focus:ring-2 ring-white focus:bg-form-active rounded-[30px] w-full placeholder:text-form-text">
@@ -435,6 +554,20 @@
 <footer class="border-t border-[rgb(41_37_36)] py-[32px] text-center">
     <p class="text-[12px]/[20px]">© 2026 Shcherban Bau. Alle Rechte vorbehalten.</p>
 </footer>
+
+<dialog open class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 m-0 w-[603px] h-[434px] max-w-[calc(100%-32px)] bg-bg2 text-white p-0 rounded-[20px] border border-white/10 backdrop:bg-black/60">
+    <div class="h-full w-full flex flex-col items-center justify-center text-center px-[30px] py-[40px]">
+        <img src="img/logo-mini.svg" alt="Shcherban Bau" class="w-[96px]">
+        <div class="mt-[28px] size-[58px] rounded-full bg-[rgb(30_166_78)] flex items-center justify-center">
+            <svg viewBox="0 0 24 24" class="size-[28px]" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 12.5L10 17L19 8" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h2 class="mt-[24px] font-bold text-[40px]/[44px] uppercase">Vielen Dank!</h2>
+        <p class="mt-[12px] text-[16px]/[25px] max-w-[470px]">Wir haben Ihre Nachricht erhalten und melden uns in Kürze bei Ihnen.</p>
+        <button class="mt-[28px] bg-primary text-black font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px]">Busgeld</button>
+    </div>
+</dialog>
 
 </body>
 </html>
