@@ -67,13 +67,49 @@
 </head>
 <body class="bg-bg text-white antialiased">
 <input id="mobile-menu-toggle" type="checkbox" class="peer/mobile-menu sr-only">
-<header class="bg-bg3 flex items-center justify-between px-[50px] py-[20px] w-full max-w-[1680px] mx-auto sticky top-0 z-[60]">
+<header class="bg-bg3 flex items-center justify-between px-[20px] md:px-[50px] py-[20px] xl:py-0 w-full max-w-[1680px] mx-auto sticky top-0 z-[60]">
     <img class="w-[111px] md:w-[122px] xl:w-[152px]" src="img/logo.svg" alt="Schcherban Bau">
     <nav class="items-center hidden xl:flex">
         <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Home</a>
         <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Über uns</a>
         <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Vorteile</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Leistungen</a>
+        <div class="relative group">
+            <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black group-hover:[&:not(:hover)]:bg-menu-active-bg border-t border-3 border-transparent group-hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">
+                <span class="flex items-center gap-[8px]">
+                    <span>Leistungen</span>
+                    <img src="img/icons/chevron-down.svg" alt="" class="size-[8px]">
+                </span>
+            </a>
+            <div class="absolute top-full left-0 min-w-[240px] bg-menu-active-bg opacity-0 pointer-events-none translate-y-[8px] transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
+                <a href="#" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
+                    <span class="flex items-center gap-[8px]">
+                        <span class="size-[8px] rounded-full bg-job-1"></span>
+                        <span>Innenausbau</span>
+                    </span>
+                </a>
+                <div class="h-px bg-bg2"></div>
+                <a href="#" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
+                    <span class="flex items-center gap-[8px]">
+                        <span class="size-[8px] rounded-full bg-job-2"></span>
+                        <span>Möbel & Montage</span>
+                    </span>
+                </a>
+                <div class="h-px bg-bg2"></div>
+                <a href="#" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
+                    <span class="flex items-center gap-[8px]">
+                        <span class="size-[8px] rounded-full bg-job-3"></span>
+                        <span>Komplettservice</span>
+                    </span>
+                </a>
+                <div class="h-px bg-bg2"></div>
+                <a href="#" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
+                    <span class="flex items-center gap-[8px]">
+                        <span class="size-[8px] rounded-full bg-job-4"></span>
+                        <span>Vorbereitung & Demontage</span>
+                    </span>
+                </a>
+            </div>
+        </div>
         <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Arbeitsablauf</a>
         <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Projekte</a>
         <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Kontakt</a>
@@ -83,7 +119,7 @@
             <img src="img/icons/whatsapp.svg" alt="WhatsApp">
             <span class="text-[rgb(37_211_102)] hover:text-[rgb(37_211_102)] font-bold">WHATSAPP</span>
         </a>
-        <button class="bg-primary hover:bg-primary-hover text-black font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] text-[12px]/[24px] md:text-[14px] uppercase">Jetzt anfragen</button>
+        <button class="bg-primary hover:bg-primary-hover text-black font-bold font-[Roboto] py-[8px] px-[16px] md:px-[24px] rounded-[45px] text-[12px]/[24px] md:text-[14px] uppercase">Jetzt anfragen</button>
         <a href="#" class="hidden md:flex bg-button-bg hover:bg-button-bg-hover items-center justify-center h-[40px] w-[56px] rounded-[45px]"><img class="w-[28px]" src="img/icons/flags/de.svg" alt="DE"></a>
         <label for="mobile-menu-toggle" class="xl:hidden bg-button-bg hover:bg-button-bg-hover flex items-center justify-center h-[40px] w-[56px] rounded-[45px] cursor-pointer peer-checked/mobile-menu:hidden" aria-label="Menü öffnen">
             <img class="size-[32px]" src="img/icons/menu.svg" alt="Menü">
