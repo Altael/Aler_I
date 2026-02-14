@@ -28,6 +28,7 @@
                         bg3: 'rgba(19, 19, 19, 1)',
                         bg4: 'rgba(40, 40, 40, 1)',
                         bg5: 'rgba(57, 57, 57, 1)',
+                        'bg-cookies': 'rgba(47, 39, 29, 1)',
                         'menu-active-bg': 'rgba(15, 15, 15, 1)',
                         'menu-active-text': 'rgba(255, 255, 255, 1)',
                         'menu-text': 'rgba(178, 178, 178, 1)',
@@ -69,6 +70,15 @@
         }
 
         body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery-no-scrollbar {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .gallery-no-scrollbar::-webkit-scrollbar {
             display: none;
         }
 
@@ -137,7 +147,7 @@
             <img src="img/icons/whatsapp.svg" alt="WhatsApp">
             <span class="text-[rgb(37_211_102)] hover:text-[rgb(37_211_102)] font-bold">WHATSAPP</span>
         </a>
-        <button type="button" onclick="showThankYouDialog()" class="bg-primary hover:bg-primary-hover text-black font-bold font-[Roboto] py-[8px] px-[16px] md:px-[24px] rounded-[45px] text-[12px]/[24px] md:text-[14px] uppercase">Jetzt anfragen</button>
+        <a href="#kontakt" class="bg-primary hover:bg-primary-hover text-black font-bold font-[Roboto] py-[8px] px-[16px] md:px-[24px] rounded-[45px] text-[12px]/[24px] md:text-[14px] uppercase">Jetzt anfragen</a>
         <div class="relative hidden md:block">
             <input id="language-toggle" type="checkbox" class="peer/language fixed top-0 left-0 opacity-0 pointer-events-none">
             <label for="language-toggle" class="bg-button-bg hover:bg-button-bg-hover flex items-center justify-center h-[40px] min-w-[56px] px-[12px] rounded-[45px] cursor-pointer">
@@ -335,7 +345,7 @@
             <span class="uppercase text-[18px]/[32px] font-bold">Alles aus einer Hand</span>
         </div>
     </div>
-    <button class="bg-primary text-black font-bold font-[Roboto] uppercase py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
+    <a href="#kontakt" class="bg-primary text-black font-bold font-[Roboto] uppercase py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</a>
 </section>
 
 <article id="innenausbau" class="bg-bg2 py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
@@ -354,7 +364,7 @@
                     <li>Sockelleistenmontage</li>
                 </ul>
             </div>
-            <button class="bg-job-1 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</button>
+            <a href="#kontakt" class="bg-job-1 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
         <img class="h-[522px] xl:w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-1.jpg" alt="Innenausbau">
     </div>
@@ -376,7 +386,7 @@
                     <li>Endmontage</li>
                 </ul>
             </div>
-            <button class="bg-job-2 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</button>
+            <a href="#kontakt" class="bg-job-2 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
         <img class="h-[522px] xl:max-w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-2.jpg" alt="Innenausbau">
     </div>
@@ -398,7 +408,7 @@
                     <li>Projektbegleitung</li>
                 </ul>
             </div>
-            <button class="bg-job-3 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</button>
+            <a href="#kontakt" class="bg-job-3 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
         <img class="h-[522px] xl:max-w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-3.jpg" alt="Innenausbau">
     </div>
@@ -421,7 +431,7 @@
                     <li>Sanitäranschlüsse – über Partnerfirma</li>
                 </ul>
             </div>
-            <button class="bg-job-4 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</button>
+            <a href="#kontakt" class="bg-job-4 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
         <img class="h-[522px] w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-4.jpg" alt="Innenausbau">
     </div>
@@ -463,7 +473,7 @@
         </div>
     </div>
     <p class="text-menu-text bg-bg italic text-center">Klare Planung, strukturierte Abläufe und Qualitätskontrolle stehen bei uns an erster Stelle.</p>
-    <button class="bg-primary text-black font-bold font-[Roboto] uppercase py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
+    <a href="#kontakt" class="bg-primary text-black font-bold font-[Roboto] uppercase py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</a>
 </section>
 
 <section id="projekte" class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
@@ -471,7 +481,56 @@
         <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">PROJEKTE</h2>
         <h3 class="text-center text-[16px]/[25px] mt-[24px]">Wir realisieren Renovierungen unterschiedlicher Art – von Einzelarbeiten bis zu Komplettprojekten aus einer Hand.</h3>
     </div>
-    <img src="img/gallery.png" alt="gallery">
+    <div class="w-full max-w-[1600px]">
+        <div id="projects-gallery" class="relative overflow-hidden">
+            <div id="projects-gallery-scroll" class="gallery-no-scrollbar overflow-x-auto select-none touch-pan-x cursor-grab active:cursor-grabbing">
+                <div class="w-max flex flex-col gap-[16px]">
+                    <div id="projects-gallery-row-1" class="flex gap-[16px]">
+                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                    </div>
+                    <div id="projects-gallery-row-2" class="flex gap-[16px] translate-x-[170px]">
+                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                    </div>
+                </div>
+            </div>
+            <div class="pointer-events-none absolute inset-y-0 left-0 w-[72px] bg-gradient-to-r from-bg to-transparent"></div>
+            <div class="pointer-events-none absolute inset-y-0 right-0 w-[72px] bg-gradient-to-l from-bg to-transparent"></div>
+            <button type="button" id="projects-gallery-prev" class="hidden md:flex absolute left-[12px] top-1/2 -translate-y-1/2 z-10 size-[80px] rounded-full bg-button-bg hover:bg-button-bg-hover items-center justify-center" aria-label="Vorherige Projekte">
+                <img src="img/icons/arrow-left.svg" alt="" class="size-[60px]">
+            </button>
+            <button type="button" id="projects-gallery-next" class="hidden md:flex absolute right-[12px] top-1/2 -translate-y-1/2 z-10 size-[80px] rounded-full bg-button-bg hover:bg-button-bg-hover items-center justify-center" aria-label="Nächste Projekte">
+                <img src="img/icons/arrow-right.svg" alt="" class="size-[60px]">
+            </button>
+        </div>
+    </div>
 </section>
 
 <section class="py-[50px] md:py-[80px] px-[20px] bg-bg2">
@@ -581,7 +640,7 @@
             <span class="relative block w-[24px] h-[24px] shrink-0 rounded-[4px] bg-[rgba(102,102,102,1)] border border-white after:content-[''] after:absolute after:inset-[4px] after:bg-primary after:rounded-[2px] after:opacity-0 peer-checked:after:opacity-100"></span>
             <span class="text-white">Ich habe die Allgemeinen Geschäftsbedingungen gelesen und verstanden.</span>
         </label>
-        <button class="bg-primary text-black disabled:bg-[rgb(133_85_21)] uppercase font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
+        <button type="button" onclick="showThankYouDialog()" class="bg-primary text-black disabled:bg-[rgb(133_85_21)] uppercase font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
         <p class="italic text-[14px]/[18px] text-[rgb(216_238_223)]">
             Mit dem Absenden des Formulars erkläre ich mich mit der Verarbeitung meiner Daten gemäß der Datenschutzerklärung einverstanden.
             Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.
@@ -592,6 +651,14 @@
 <footer class="border-t border-[rgb(41_37_36)] py-[32px] text-center">
     <p class="text-[12px]/[20px]">© 2026 Shcherban Bau. Alle Rechte vorbehalten.</p>
 </footer>
+
+<div class="hidden fixed bottom-[12px] right-[12px] px-[30px] py-[40px] max-w-[312px] flex flex-col items-center bg-bg-cookies z-12 gap-[40px] rounded-[30px]">
+    <img src="/img/icons/cookie.svg" class="w-[72px]" alt="cookies">
+    <p class="text-body-compact text-white text-center">
+        Akzeptieren Sie unsere Cookies für das beste Website-Erlebnis. Durch Klicken auf "Alle akzeptieren" stimmen Sie der Verwendung aller Cookies zu, wie in unserer Datenschutzerklärung beschrieben. Sie können Ihre Einwilligung jederzeit ändern oder widerrufen.
+    </p>
+    <button class="bg-primary text-black disabled:bg-[rgb(133_85_21)] uppercase font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px]">Alle Akzeptieren</button>
+</div>
 
 <dialog id="thank-you-dialog" class="overscroll-contain overflow-auto backdrop:overscroll-contain backdrop:overflow-auto fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 m-0 w-[603px] h-[434px] max-w-[calc(100%-32px)] bg-bg2 text-white p-0 rounded-[20px] border border-white/10 backdrop:bg-black/60">
     <div class="h-full w-full flex flex-col items-center justify-center text-center px-[30px] py-[40px]">
@@ -712,6 +779,141 @@
         window.addEventListener('wheel', onScroll, { passive: false });
         window.addEventListener('touchmove', onScroll, { passive: false });
 
+    })();
+
+    (function () {
+        const viewport = document.getElementById('projects-gallery-scroll');
+        const row1 = document.getElementById('projects-gallery-row-1');
+        const prevButton = document.getElementById('projects-gallery-prev');
+        const nextButton = document.getElementById('projects-gallery-next');
+
+        if (!viewport || !row1) return;
+
+        let cycleWidth = 0;
+        let rafId = null;
+        let isDragging = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+        const autoSpeed = 1.1;
+        const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+
+        function recalculate() {
+            cycleWidth = row1.scrollWidth / 3;
+            if (!cycleWidth) return;
+
+            if (viewport.scrollLeft === 0) {
+                viewport.scrollLeft = cycleWidth;
+            } else {
+                normalizeLoop();
+            }
+        }
+
+        function normalizeLoop() {
+            if (!cycleWidth) return;
+
+            if (viewport.scrollLeft <= cycleWidth * 0.5) {
+                viewport.scrollLeft += cycleWidth;
+            } else if (viewport.scrollLeft >= cycleWidth * 1.5) {
+                viewport.scrollLeft -= cycleWidth;
+            }
+        }
+
+        function tick() {
+            if (!isDragging) {
+                viewport.scrollLeft += autoSpeed;
+                normalizeLoop();
+            }
+            rafId = requestAnimationFrame(tick);
+        }
+
+        function nudge(delta) {
+            viewport.scrollLeft += delta;
+            normalizeLoop();
+        }
+
+        function smoothNudge(delta, duration = 360) {
+            const start = viewport.scrollLeft;
+            const target = start + delta;
+            const startedAt = performance.now();
+
+            function easeInOut(t) {
+                return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+            }
+
+            function step(now) {
+                const elapsed = now - startedAt;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeInOut(progress);
+
+                viewport.scrollLeft = start + (target - start) * eased;
+                normalizeLoop();
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        if (!isCoarsePointer) {
+            viewport.addEventListener('pointerdown', function (event) {
+                isDragging = true;
+                startX = event.clientX;
+                startScrollLeft = viewport.scrollLeft;
+                viewport.setPointerCapture(event.pointerId);
+            });
+
+            viewport.addEventListener('pointermove', function (event) {
+                if (!isDragging) return;
+
+                const dx = event.clientX - startX;
+                viewport.scrollLeft = startScrollLeft - dx;
+                normalizeLoop();
+            });
+
+            function stopDragging() {
+                isDragging = false;
+            }
+
+            viewport.addEventListener('pointerup', stopDragging);
+            viewport.addEventListener('pointercancel', stopDragging);
+            viewport.addEventListener('pointerleave', stopDragging);
+        }
+
+        if (prevButton) {
+            prevButton.addEventListener('click', function () {
+                smoothNudge(-340);
+            });
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener('click', function () {
+                smoothNudge(340);
+            });
+        }
+
+        function start() {
+            recalculate();
+
+            if (!cycleWidth) return;
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(tick);
+        }
+
+        if (document.readyState === 'complete') {
+            start();
+        } else {
+            window.addEventListener('load', start, { once: true });
+        }
+
+        window.addEventListener('resize', recalculate);
+
+        window.addEventListener('beforeunload', function () {
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+            }
+        });
     })();
 
 </script>
