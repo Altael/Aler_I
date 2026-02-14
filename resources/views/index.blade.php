@@ -15,6 +15,7 @@
             theme: {
                 screens: {
                     md: '800px',
+                    lg: '1280px',
                     xl: '1728px'
                 },
                 extend: {
@@ -56,55 +57,70 @@
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        body {
-            font-family: "Inter", sans-serif;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
         }
 
-        body:has(#mobile-menu-toggle:checked) {
-            overflow: hidden;
+        body {
+            font-family: "Inter", sans-serif;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        dialog::backdrop {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
         }
     </style>
 </head>
 <body class="bg-bg text-white antialiased">
 
-<input id="mobile-menu-toggle" type="checkbox" class="peer/mobile-menu sr-only">
+<input id="mobile-menu-toggle" type="checkbox" class="peer/mobile-menu fixed top-0 left-0 opacity-0 pointer-events-none">
 <header class="bg-bg3 flex items-center justify-between px-[20px] md:px-[50px] py-[20px] xl:py-0 w-full sticky top-0 z-[60]">
     <img class="w-[111px] md:w-[122px] xl:w-[152px]" src="img/logo.svg" alt="Schcherban Bau">
     <nav class="items-center hidden xl:flex">
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Home</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Über uns</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Vorteile</a>
+        <a href="#home" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Home</a>
+        <a href="#ueber-uns" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Über uns</a>
+        <a href="#vorteile" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Vorteile</a>
         <div class="relative group">
-            <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black group-hover:[&:not(:hover)]:bg-menu-active-bg border-t border-3 border-transparent group-hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">
+            <a href="#leistungen" class="block text-menu-text hover:text-menu-active-text hover:bg-black group-hover:[&:not(:hover)]:bg-menu-active-bg border-t border-3 border-transparent group-hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">
                 <span class="flex items-center gap-[8px]">
                     <span>Leistungen</span>
-                    <img src="img/icons/chevron-down.svg" alt="" class="size-[8px] group-hover:hidden">
-                    <img src="img/icons/chevron-up.svg" alt="" class="size-[8px] hidden group-hover:block">
+                    <img src="img/icons/chevron-down.svg" alt="" class="chev-down size-[8px] group-hover:hidden">
+                    <img src="img/icons/chevron-up.svg" alt="" class="chev-up size-[8px] hidden group-hover:block">
                 </span>
             </a>
-            <div class="absolute top-full left-0 min-w-[240px] bg-menu-active-bg opacity-0 pointer-events-none translate-y-[8px] transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 z-50">
-                <a href="#" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
+            <div class="absolute top-full left-0 min-w-[240px] bg-menu-active-bg opacity-0 pointer-events-none translate-y-[8px] transition-all duration-200 z-50 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
+                <a href="#innenausbau" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
                     <span class="flex items-center gap-[8px]">
                         <span class="size-[8px] rounded-full bg-job-1"></span>
                         <span>Innenausbau</span>
                     </span>
                 </a>
                 <div class="h-px bg-bg2"></div>
-                <a href="#" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
+                <a href="#moebel-montage" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
                     <span class="flex items-center gap-[8px]">
                         <span class="size-[8px] rounded-full bg-job-2"></span>
                         <span>Möbel & Montage</span>
                     </span>
                 </a>
                 <div class="h-px bg-bg2"></div>
-                <a href="#" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
+                <a href="#komplettservice" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
                     <span class="flex items-center gap-[8px]">
                         <span class="size-[8px] rounded-full bg-job-3"></span>
                         <span>Komplettservice</span>
                     </span>
                 </a>
                 <div class="h-px bg-bg2"></div>
-                <a href="#" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
+                <a href="#vorbereitung-demontage" class="block px-[20px] py-[19px] text-menu-text hover:text-white hover:bg-black">
                     <span class="flex items-center gap-[8px]">
                         <span class="size-[8px] rounded-full bg-job-4"></span>
                         <span>Vorbereitung & Demontage</span>
@@ -112,27 +128,27 @@
                 </a>
             </div>
         </div>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Arbeitsablauf</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Projekte</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Kontakt</a>
+        <a href="#arbeitsablauf" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Arbeitsablauf</a>
+        <a href="#projekte" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Projekte</a>
+        <a href="#kontakt" class="block text-menu-text hover:text-menu-active-text hover:bg-black border-t border-3 border-transparent hover:border-primary text-[16px]/[24px] px-[24px] py-[28px]">Kontakt</a>
     </nav>
     <nav class="flex items-center gap-[24px]">
         <a href="#" class="hidden md:flex items-center gap-[8px] bg-button-bg hover:bg-button-bg-hover px-[16px] py-[8px] rounded-[45px]">
             <img src="img/icons/whatsapp.svg" alt="WhatsApp">
             <span class="text-[rgb(37_211_102)] hover:text-[rgb(37_211_102)] font-bold">WHATSAPP</span>
         </a>
-        <button class="bg-primary hover:bg-primary-hover text-black font-bold font-[Roboto] py-[8px] px-[16px] md:px-[24px] rounded-[45px] text-[12px]/[24px] md:text-[14px] uppercase">Jetzt anfragen</button>
+        <button type="button" onclick="showThankYouDialog()" class="bg-primary hover:bg-primary-hover text-black font-bold font-[Roboto] py-[8px] px-[16px] md:px-[24px] rounded-[45px] text-[12px]/[24px] md:text-[14px] uppercase">Jetzt anfragen</button>
         <div class="relative hidden md:block">
-            <input id="language-toggle" type="checkbox" class="peer/language sr-only">
+            <input id="language-toggle" type="checkbox" class="peer/language fixed top-0 left-0 opacity-0 pointer-events-none">
             <label for="language-toggle" class="bg-button-bg hover:bg-button-bg-hover flex items-center justify-center h-[40px] min-w-[56px] px-[12px] rounded-[45px] cursor-pointer">
                 <img class="w-[28px]" src="img/icons/flags/de.svg" alt="DE">
             </label>
             <div class="absolute top-full right-0 mt-[8px] w-[222px] bg-menu-active-bg opacity-0 pointer-events-none translate-y-[8px] transition-all duration-200 peer-checked/language:opacity-100 peer-checked/language:pointer-events-auto peer-checked/language:translate-y-0 z-50 divide-y divide-bg2">
-                <a href="#" class="flex items-center gap-[8px] px-[16px] py-[21px] text-menu-text hover:text-white hover:bg-black">
+                <a class="cursor-pointer flex items-center gap-[8px] px-[16px] py-[21px] text-menu-text hover:text-white hover:bg-black">
                     <img src="img/icons/flags/de.svg" alt="Deutsch" class="w-[28px]">
                     <span>Deutsch</span>
                 </a>
-                <a href="#" class="flex items-center gap-[8px] px-[16px] py-[21px] text-menu-text hover:text-white hover:bg-black">
+                <a class="cursor-pointer flex items-center gap-[8px] px-[16px] py-[21px] text-menu-text hover:text-white hover:bg-black">
                     <img src="img/icons/flags/gb.svg" alt="English" class="w-[28px]">
                     <span>English</span>
                 </a>
@@ -146,12 +162,12 @@
         </label>
     </nav>
 </header>
-<label for="mobile-menu-toggle" class="fixed top-[80px] right-0 bottom-0 left-0 z-40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 peer-checked/mobile-menu:opacity-100 peer-checked/mobile-menu:pointer-events-auto" aria-label="Menü schließen"></label>
-<aside class="fixed top-[80px] right-0 bottom-0 z-50 w-[250px] bg-bg3 py-[24px] flex flex-col gap-[20px] translate-x-full transition-transform duration-300 peer-checked/mobile-menu:translate-x-0">
+<label for="mobile-menu-toggle" class="overscroll-contain overflow-auto fixed top-[80px] right-0 bottom-0 left-0 z-40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 peer-checked/mobile-menu:opacity-100 peer-checked/mobile-menu:pointer-events-auto" aria-label="Menü schließen"></label>
+<aside id="mobile-menu-panel" class="overscroll-contain overflow-auto fixed top-[80px] right-0 bottom-0 z-50 w-[250px] bg-bg3 pb-[24px] flex flex-col gap-[20px] translate-x-full transition-transform duration-300 peer-checked/mobile-menu:translate-x-0">
     <nav class="flex flex-col divide-y divide-bg2">
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Home</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Über uns</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Vorteile</a>
+        <a href="#home" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Home</a>
+        <a href="#ueber-uns" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Über uns</a>
+        <a href="#vorteile" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Vorteile</a>
         <div>
             <input id="mobile-services-toggle" type="checkbox" class="peer/services sr-only">
             <label for="mobile-services-toggle" class="flex items-center justify-between text-menu-text hover:text-menu-active-text hover:bg-black px-[12px] py-[14px] cursor-pointer peer-checked/services:[&_.chev-down]:hidden peer-checked/services:[&_.chev-up]:block">
@@ -162,28 +178,28 @@
                 </span>
             </label>
             <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked/services:max-h-[320px] bg-menu-active-bg">
-                <a href="#" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
+                <a href="#innenausbau" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
                     <span class="flex items-center gap-[8px]">
                         <span class="size-[8px] rounded-full bg-job-1"></span>
                         <span>Innenausbau</span>
                     </span>
                 </a>
                 <div class="h-px bg-bg2"></div>
-                <a href="#" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
+                <a href="#moebel-montage" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
                     <span class="flex items-center gap-[8px]">
                         <span class="size-[8px] rounded-full bg-job-2"></span>
                         <span>Möbel & Montage</span>
                     </span>
                 </a>
                 <div class="h-px bg-bg2"></div>
-                <a href="#" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
+                <a href="#komplettservice" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
                     <span class="flex items-center gap-[8px]">
                         <span class="size-[8px] rounded-full bg-job-3"></span>
                         <span>Komplettservice</span>
                     </span>
                 </a>
                 <div class="h-px bg-bg2"></div>
-                <a href="#" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
+                <a href="#vorbereitung-demontage" class="block px-[20px] py-[14px] text-menu-text hover:text-white hover:bg-black">
                     <span class="flex items-center gap-[8px]">
                         <span class="size-[8px] rounded-full bg-job-4"></span>
                         <span>Vorbereitung & Demontage</span>
@@ -191,26 +207,48 @@
                 </a>
             </div>
         </div>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Arbeitsablauf</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Projekte</a>
-        <a href="#" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Kontakt</a>
+        <a href="#arbeitsablauf" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Arbeitsablauf</a>
+        <a href="#projekte" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Projekte</a>
+        <a href="#kontakt" class="block text-menu-text hover:text-menu-active-text hover:bg-black text-[16px]/[24px] px-[12px] py-[14px]">Kontakt</a>
     </nav>
+    <div class="mt-auto px-[12px] flex flex-col gap-[12px]">
+        <a href="#" class="flex items-center justify-center gap-[8px] bg-button-bg hover:bg-button-bg-hover px-[16px] py-[8px] rounded-[45px]">
+            <img src="img/icons/whatsapp.svg" alt="WhatsApp">
+            <span class="text-[rgb(37_211_102)] font-bold">WHATSAPP</span>
+        </a>
+        <div class="relative">
+            <input id="mobile-language-toggle" type="checkbox" class="peer/mobile-language fixed top-0 left-0 opacity-0 pointer-events-none">
+            <label for="mobile-language-toggle" class="bg-button-bg hover:bg-button-bg-hover flex items-center justify-center h-[40px] w-full rounded-[45px] cursor-pointer">
+                <img class="w-[28px]" src="img/icons/flags/de.svg" alt="DE">
+            </label>
+            <div class="absolute bottom-full right-0 mb-[8px] w-[222px] max-w-full bg-menu-active-bg opacity-0 pointer-events-none translate-y-[8px] transition-all duration-200 peer-checked/mobile-language:opacity-100 peer-checked/mobile-language:pointer-events-auto peer-checked/mobile-language:translate-y-0 z-50 divide-y divide-bg2">
+                <a href="#" class="flex items-center gap-[8px] px-[16px] py-[21px] text-menu-text hover:text-white hover:bg-black">
+                    <img src="img/icons/flags/de.svg" alt="Deutsch" class="w-[28px]">
+                    <span>Deutsch</span>
+                </a>
+                <a href="#" class="flex items-center gap-[8px] px-[16px] py-[21px] text-menu-text hover:text-white hover:bg-black">
+                    <img src="img/icons/flags/gb.svg" alt="English" class="w-[28px]">
+                    <span>English</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </aside>
 
-<section class="relative h-[664px] xl:h-[768px] w-full overflow-hidden">
+<section id="home" class="relative h-[664px] xl:h-[768px] w-full overflow-hidden">
     <video class="absolute inset-0 h-full w-full object-cover grayscale opacity-10" autoplay muted loop playsinline><source src="img/small.mp4" type="video/mp4"/></video>
     <div class="relative h-full w-full mx-auto flex items-end justify-center">
         <img src="img/owner.png" alt="Shcherbau" class="grayscale object-cover object-bottom h-[130%] w-auto max-w-none"/>
     </div>
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(248,151,23,0.12)_100%)]"></div>
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.7)_100%)]"></div>
-    <div class="absolute top-[35%] px-[20px] pb-[24px] z-10 flex flex-col items-center gap-[14px] text-center w-full">
+    <div class="absolute top-[35%] px-[20px] pb-[24px] flex flex-col items-center gap-[14px] text-center w-full">
         <h1 class="font-bold text-[36px] md:text-[50px] xl:text-[70px] font-bold uppercase max-w-[1139px]">Professionelle Renovierung in <span class="text-primary">München</span> und <span class="text-primary">Umgebung</span></h1>
         <span class="text-center text-[16px]/[25px] mt-[34px]">Kein Stress, keine Abstimmung mit mehreren Firmen – wir kümmern uns um alles, vom ersten Schritt bis zum fertigen Raum.<br>Ein Projekt. Ein Ansprechpartner. Ein Ergebnis, das überzeugt.</span>
     </div>
 </section>
 
-<section class="py-[50px] md:py-[90px] flex flex-col items-center gap-[90px] px-[20px] max-w-[640px] mx-auto">
+<section id="ueber-uns" class="py-[50px] md:py-[90px] flex flex-col items-center gap-[90px] px-[20px] max-w-[640px] mx-auto">
     <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]/[59px]">Über uns</h2>
 
     <p class="text-[16px]/[25px] max-w-[900px] mx-auto text-center">
@@ -228,7 +266,7 @@
     </div>
 </section>
 
-<section class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[90px] bg-bg2">
+<section id="leistungen" class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[90px] bg-bg2">
     <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">Leistungen</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         <div class="relative w-[306px] h-[436px] flex items-end justify-center rounded-[10px] overflow-hidden">
@@ -270,7 +308,7 @@
     </div>
 </section>
 
-<section class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
+<section id="vorteile" class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
     <div>
         <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">Vorteile</h2>
         <h3 class="text-center text-[16px]/[25px] mt-[24px]">Effizient – klar – zuverlässig</h3>
@@ -300,7 +338,7 @@
     <button class="bg-primary text-black font-bold font-[Roboto] uppercase py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
 </section>
 
-<article class="bg-bg2 py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
+<article id="innenausbau" class="bg-bg2 py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
     <div class="max-w-[1328px] mx-auto flex flex-col xl:flex-row gap-[50px] justify-between items-center">
         <div class="flex flex-col items-start gap-[40px] max-w-[600px]">
             <h2 class="text-job-1 text-center md:text-start w-full uppercase text-[36px] md:text-[58px]/[58px] font-bold">Innenausbau</h2>
@@ -322,7 +360,7 @@
     </div>
 </article>
 
-<article class="py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
+<article id="moebel-montage" class="py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
     <div class="max-w-[1328px] mx-auto flex flex-col-reverse xl:flex-row-reverse gap-[50px] justify-between items-center">
         <div class="flex flex-col items-start gap-[40px] max-w-[600px]">
             <h2 class="text-job-2 text-center md:text-start w-full uppercase text-[36px] md:text-[58px]/[58px] font-bold">moebel-montage</h2>
@@ -344,7 +382,7 @@
     </div>
 </article>
 
-<article class="bg-bg2 py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
+<article id="komplettservice" class="bg-bg2 py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
     <div class="max-w-[1328px] mx-auto flex flex-col xl:flex-row gap-[50px] justify-between items-center">
         <div class="flex flex-col items-start gap-[40px] max-w-[600px]">
             <h2 class="text-job-3 text-center md:text-start w-full uppercase text-[36px] md:text-[58px]/[58px] font-bold">KOMPLETTSERVICE</h2>
@@ -366,7 +404,7 @@
     </div>
 </article>
 
-<article class="py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
+<article id="vorbereitung-demontage" class="py-[50px] md:py-[80px] xl:py-[100px] px-[20px] md:px-[80px]">
     <div class="max-w-[1328px] mx-auto flex flex-col-reverse xl:flex-row-reverse gap-[50px] justify-between items-center">
         <div class="flex flex-col items-start gap-[40px] max-w-[600px]">
             <h2 class="text-job-4 text-center md:text-start w-full uppercase text-[36px] md:text-[58px]/[58px] font-bold">VORBEREITUNG & DEMONTAGE</h2>
@@ -389,7 +427,7 @@
     </div>
 </article>
 
-<section class="bg-bg2 py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
+<section id="arbeitsablauf" class="bg-bg2 py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
     <div>
         <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">Arbeitsablauf</h2>
         <h3 class="text-center text-[16px]/[25px] mt-[24px]">Effizient – klar – zuverlässig</h3>
@@ -428,7 +466,7 @@
     <button class="bg-primary text-black font-bold font-[Roboto] uppercase py-[8px] px-[24px] rounded-[45px]">Jetzt anfragen</button>
 </section>
 
-<section class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
+<section id="projekte" class="py-[50px] md:py-[90px] px-[20px] flex flex-col items-center gap-[70px]">
     <div>
         <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">PROJEKTE</h2>
         <h3 class="text-center text-[16px]/[25px] mt-[24px]">Wir realisieren Renovierungen unterschiedlicher Art – von Einzelarbeiten bis zu Komplettprojekten aus einer Hand.</h3>
@@ -487,7 +525,7 @@
     </div>
 </section>
 
-<nav class="py-[50px] md:py-[90px] px-[20px] max-w-[1328px] mx-auto flex flex-col xl:flex-row justify-between items-start gap-[58px]">
+<nav id="kontakt" class="py-[50px] md:py-[90px] px-[20px] max-w-[1328px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-[58px]">
     <div class="flex flex-col gap-[50px] md:gap-[72px]">
         <div class="flex flex-col gap-[16px] items-start">
             <img src="img/logo-mini.svg" alt="schcherban">
@@ -555,19 +593,128 @@
     <p class="text-[12px]/[20px]">© 2026 Shcherban Bau. Alle Rechte vorbehalten.</p>
 </footer>
 
-<dialog open class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 m-0 w-[603px] h-[434px] max-w-[calc(100%-32px)] bg-bg2 text-white p-0 rounded-[20px] border border-white/10 backdrop:bg-black/60">
+<dialog id="thank-you-dialog" class="overscroll-contain overflow-auto backdrop:overscroll-contain backdrop:overflow-auto fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 m-0 w-[603px] h-[434px] max-w-[calc(100%-32px)] bg-bg2 text-white p-0 rounded-[20px] border border-white/10 backdrop:bg-black/60">
     <div class="h-full w-full flex flex-col items-center justify-center text-center px-[30px] py-[40px]">
         <img src="img/logo-mini.svg" alt="Shcherban Bau" class="w-[96px]">
-        <div class="mt-[28px] size-[58px] rounded-full bg-[rgb(30_166_78)] flex items-center justify-center">
-            <svg viewBox="0 0 24 24" class="size-[28px]" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12.5L10 17L19 8" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
+        <img class="mt-[28px] size-[35px]" src="img/icons/check.svg" alt="">
         <h2 class="mt-[24px] font-bold text-[40px]/[44px] uppercase">Vielen Dank!</h2>
         <p class="mt-[12px] text-[16px]/[25px] max-w-[470px]">Wir haben Ihre Nachricht erhalten und melden uns in Kürze bei Ihnen.</p>
-        <button class="mt-[28px] bg-primary text-black font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px]">Busgeld</button>
+        <button type="button" onclick="closeThankYouDialog()" class="mt-[28px] bg-primary text-black font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px]">Busgeld</button>
     </div>
 </dialog>
+
+<script>
+    let dialogScrollY = 0;
+    let dialogBodyPosition = '';
+    let dialogBodyTop = '';
+    let dialogBodyLeft = '';
+    let dialogBodyRight = '';
+    let dialogBodyWidth = '';
+
+    function lockBodyForDialog() {
+        dialogScrollY = window.scrollY || window.pageYOffset || 0;
+        dialogBodyPosition = document.body.style.position;
+        dialogBodyTop = document.body.style.top;
+        dialogBodyLeft = document.body.style.left;
+        dialogBodyRight = document.body.style.right;
+        dialogBodyWidth = document.body.style.width;
+
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${dialogScrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+    }
+
+    function unlockBodyForDialog() {
+        const html = document.documentElement;
+        const previousScrollBehavior = html.style.scrollBehavior;
+        html.style.scrollBehavior = 'auto';
+        document.body.style.position = dialogBodyPosition;
+        document.body.style.top = dialogBodyTop;
+        document.body.style.left = dialogBodyLeft;
+        document.body.style.right = dialogBodyRight;
+        document.body.style.width = dialogBodyWidth;
+        window.scrollTo(0, dialogScrollY);
+        requestAnimationFrame(() => {
+            html.style.scrollBehavior = previousScrollBehavior;
+        });
+    }
+
+    function showThankYouDialog() {
+        const dialog = document.getElementById('thank-you-dialog');
+
+        if (dialog && typeof dialog.showModal === 'function') {
+            lockBodyForDialog();
+            dialog.showModal();
+        }
+    }
+
+    function closeThankYouDialog() {
+        const dialog = document.getElementById('thank-you-dialog');
+
+        if (dialog && dialog.open) {
+            dialog.close();
+        }
+    }
+
+    (function () {
+        const dialog = document.getElementById('thank-you-dialog');
+        if (!dialog) return;
+
+        function preventBackgroundScrollWhenDialogOpen(event) {
+            if (!dialog.open) {
+                return;
+            }
+
+            const path = event.composedPath ? event.composedPath() : null;
+            const insideDialog = path
+                ? path.includes(dialog)
+                : dialog.contains(event.target);
+
+            if (insideDialog) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        window.addEventListener('wheel', preventBackgroundScrollWhenDialogOpen, { passive: false });
+        window.addEventListener('touchmove', preventBackgroundScrollWhenDialogOpen, { passive: false });
+
+        dialog.addEventListener('close', unlockBodyForDialog);
+    })();
+
+    (function () {
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const menuPanel = document.getElementById('mobile-menu-panel');
+        if (!menuToggle || !menuPanel) return;
+
+        function onScroll(event) {
+            if (!menuToggle.checked) {
+                return;
+            }
+
+            const path = event.composedPath ? event.composedPath() : null;
+            const insideMenu = path
+                ? path.includes(menuPanel)
+                : menuPanel.contains(event.target);
+
+            if (insideMenu) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        window.addEventListener('wheel', onScroll, { passive: false });
+        window.addEventListener('touchmove', onScroll, { passive: false });
+
+    })();
+
+</script>
 
 </body>
 </html>
