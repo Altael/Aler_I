@@ -246,7 +246,7 @@
 </aside>
 
 <section id="home" class="relative h-[664px] xl:h-[768px] w-full overflow-hidden">
-    <video class="absolute inset-0 h-full w-full object-cover grayscale opacity-10" autoplay muted loop playsinline><source src="img/small.mp4" type="video/mp4"/></video>
+    <video class="absolute inset-0 h-full w-full object-cover grayscale opacity-10" autoplay muted loop playsinline><source src="img/promo.mp4" type="video/mp4"/></video>
     <div class="relative h-full w-full mx-auto flex items-end justify-center">
         <img src="img/owner.png" alt="Shcherbau" class="grayscale object-cover object-bottom h-[130%] w-auto max-w-none"/>
     </div>
@@ -280,7 +280,7 @@
     <h2 class="text-primary uppercase font-bold text-center text-[36px] md:text-[58px]">Leistungen</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         <div class="relative w-[306px] h-[436px] flex items-end justify-center rounded-[10px] overflow-hidden">
-            <img src="img/job-list-1.jpg" alt="Leistungen Hintergrund" class="absolute inset-0 w-full h-full object-cover grayscale">
+            <img src="img/job-list-1.png" alt="Leistungen Hintergrund" class="absolute inset-0 w-full h-full object-cover grayscale">
             <div class="absolute inset-0 bg-gradient-to-b from-black/0 to-black"></div>
             <div class="px-[16px] pb-[24px] z-10 flex flex-col items-center gap-[14px]">
                 <div class="bg-job-1 size-[13px] rounded-full"></div>
@@ -289,7 +289,7 @@
             </div>
         </div>
         <div class="relative w-[306px] h-[436px] flex items-end justify-center rounded-[10px] overflow-hidden">
-            <img src="img/job-list-2.jpg" alt="Leistungen Hintergrund" class="absolute inset-0 w-full h-full object-cover grayscale">
+            <img src="img/job-list-2.png" alt="Leistungen Hintergrund" class="absolute inset-0 w-full h-full object-cover grayscale">
             <div class="absolute inset-0 bg-gradient-to-b from-black/0 to-black"></div>
             <div class="px-[16px] pb-[24px] z-10 flex flex-col items-center gap-[14px]">
                 <div class="bg-job-2 size-[13px] rounded-full"></div>
@@ -298,7 +298,7 @@
             </div>
         </div>
         <div class="relative w-[306px] h-[436px] flex items-end justify-center rounded-[10px] overflow-hidden">
-            <img src="img/job-list-3.jpg" alt="Leistungen Hintergrund" class="absolute inset-0 w-full h-full object-cover grayscale">
+            <img src="img/job-list-3.png" alt="Leistungen Hintergrund" class="absolute inset-0 w-full h-full object-cover grayscale">
             <div class="absolute inset-0 bg-gradient-to-b from-black/0 to-black"></div>
             <div class="px-[16px] pb-[24px] z-10 flex flex-col items-center gap-[14px]">
                 <div class="bg-job-3 size-[13px] rounded-full"></div>
@@ -307,7 +307,7 @@
             </div>
         </div>
         <div class="relative w-[306px] h-[436px] flex items-end justify-center rounded-[10px] overflow-hidden">
-            <img src="img/job-list-4.jpg" alt="Leistungen Hintergrund" class="absolute inset-0 w-full h-full object-cover grayscale">
+            <img src="img/job-list-4.png" alt="Leistungen Hintergrund" class="absolute inset-0 w-full h-full object-cover grayscale">
             <div class="absolute inset-0 bg-gradient-to-b from-black/0 to-black"></div>
             <div class="px-[16px] pb-[24px] z-10 flex flex-col items-center gap-[14px]">
                 <div class="bg-job-4 size-[13px] rounded-full"></div>
@@ -366,7 +366,10 @@
             </div>
             <a href="#kontakt" class="bg-job-1 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
-        <img class="h-[522px] xl:w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-1.jpg" alt="Innenausbau">
+        <div class="relative w-[575px] h-[555px]">
+            <img class="absolute right-0 top-0 w-[367px] h-[513px] object-cover grayscale rounded-[30px]" src="img/job-list-1-2.png" alt="Innenausbau Detail 2">
+            <img class="absolute left-0 bottom-0 w-[297px] h-[402px] object-cover grayscale rounded-[30px]" src="img/job-list-1.png" alt="Innenausbau Detail 1">
+        </div>
     </div>
 </article>
 
@@ -388,7 +391,7 @@
             </div>
             <a href="#kontakt" class="bg-job-2 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
-        <img class="h-[522px] xl:max-w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-2.jpg" alt="Innenausbau">
+        <img class="h-[522px] xl:max-w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-2.png" alt="Innenausbau">
     </div>
 </article>
 
@@ -410,7 +413,10 @@
             </div>
             <a href="#kontakt" class="bg-job-3 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
-        <img class="h-[522px] xl:max-w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-3.jpg" alt="Innenausbau">
+        <div class="relative w-[575px] h-[690px]">
+            <img class="absolute left-0 top-0 w-[460px] h-[643px] object-cover grayscale rounded-[30px]" src="img/job-list-3-2.png" alt="Komplettservice Detail 1">
+            <img class="absolute right-0 bottom-0 w-[371px] h-[502px] object-cover grayscale rounded-[30px]" src="img/job-list-3.png" alt="Komplettservice Detail 2">
+        </div>
     </div>
 </article>
 
@@ -433,7 +439,7 @@
             </div>
             <a href="#kontakt" class="bg-job-4 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
-        <img class="h-[522px] w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-4.jpg" alt="Innenausbau">
+        <img class="h-[522px] w-[522px] object-cover grayscale rounded-[30px]" src="img/job-list-4.png" alt="Innenausbau">
     </div>
 </article>
 
@@ -482,42 +488,26 @@
         <h3 class="text-center text-[16px]/[25px] mt-[24px]">Wir realisieren Renovierungen unterschiedlicher Art – von Einzelarbeiten bis zu Komplettprojekten aus einer Hand.</h3>
     </div>
     <div class="w-full max-w-[1600px]">
-        <div id="projects-gallery" class="relative overflow-hidden">
-            <div id="projects-gallery-scroll" class="gallery-no-scrollbar overflow-x-auto select-none touch-pan-x cursor-grab active:cursor-grabbing">
+        <div id="projects-gallery" class="relative overflow-hidden" x-data="{
+            galleryImages: Array.from({ length: 93 }, (_, i) => `img/gallery/gallery-${i + 1}.jpg`),
+            get galleryRow1() { return this.galleryImages.filter((_, i) => i % 2 === 0); },
+            get galleryRow2() { return this.galleryImages.filter((_, i) => i % 2 === 1); }
+        }">
+            <div id="projects-gallery-scroll" class="gallery-no-scrollbar overflow-x-auto select-none touch-auto cursor-grab active:cursor-grabbing">
                 <div class="w-max flex flex-col gap-[16px]">
                     <div id="projects-gallery-row-1" class="flex gap-[16px]">
-                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <template x-for="copy in 3" :key="'r1-copy-' + copy">
+                            <template x-for="(src, index) in galleryRow1" :key="'r1-' + copy + '-' + index">
+                                <img draggable="false" :src="src" :alt="'Projekt ' + (index + 1)" class="pointer-events-none select-none w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                            </template>
+                        </template>
                     </div>
                     <div id="projects-gallery-row-2" class="flex gap-[16px] translate-x-[170px]">
-                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-1.png" alt="Projekt 1" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-2.png" alt="Projekt 2" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-3.png" alt="Projekt 3" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-4.png" alt="Projekt 4" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
-                        <img src="img/gallery/gallery-5.png" alt="Projekt 5" class="w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                        <template x-for="copy in 3" :key="'r2-copy-' + copy">
+                            <template x-for="(src, index) in galleryRow2" :key="'r2-' + copy + '-' + index">
+                                <img draggable="false" :src="src" :alt="'Projekt ' + (index + 1)" class="pointer-events-none select-none w-[340px] h-[216px] object-cover shrink-0 rounded-[12px]">
+                            </template>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -616,13 +606,13 @@
                 <span>Datei hochladen</span>
             </button>
             <div class="relative size-[50px] border border-[rgb(127_168_140)] overflow-hidden">
-                <img src="img/job-list-1.jpg" alt="Vorschaubild 1" class="w-full h-full object-cover">
+                <img src="img/job-list-1.png" alt="Vorschaubild 1" class="w-full h-full object-cover">
                 <button type="button" class="absolute top-0 right-0 size-[18px] bg-black/19 flex items-center justify-center" aria-label="Bild entfernen">
                     <img src="img/icons/close.svg" class="size-[16px]" alt="delete">
                 </button>
             </div>
             <div class="relative size-[50px] border border-[rgb(127_168_140)] overflow-hidden">
-                <img src="img/gallery.png" alt="Vorschaubild 2" class="w-full h-full object-cover">
+                <img src="img/job-list-2.png" alt="Vorschaubild 2" class="w-full h-full object-cover">
                 <button type="button" class="absolute top-0 right-0 size-[18px] bg-black/19 flex items-center justify-center" aria-label="Bild entfernen">
                     <img src="img/icons/close.svg" class="size-[16px]" alt="delete">
                 </button>
@@ -789,17 +779,27 @@
 
         if (!viewport || !row1) return;
 
+        viewport.addEventListener('dragstart', function (event) {
+            event.preventDefault();
+        });
+
         let cycleWidth = 0;
         let rafId = null;
         let isDragging = false;
         let startX = 0;
         let startScrollLeft = 0;
-        const autoSpeed = 1.1;
+        let itemStep = 356;
+        const autoSpeed = 0.75;
         const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
 
         function recalculate() {
             cycleWidth = row1.scrollWidth / 3;
             if (!cycleWidth) return;
+
+            const firstCard = row1.querySelector('img');
+            const rowStyles = getComputedStyle(row1);
+            const gap = parseFloat(rowStyles.columnGap || rowStyles.gap || '16') || 16;
+            itemStep = (firstCard ? firstCard.getBoundingClientRect().width : 340) + gap;
 
             if (viewport.scrollLeft === 0) {
                 viewport.scrollLeft = cycleWidth;
@@ -883,13 +883,13 @@
 
         if (prevButton) {
             prevButton.addEventListener('click', function () {
-                smoothNudge(-340);
+                smoothNudge(-itemStep);
             });
         }
 
         if (nextButton) {
             nextButton.addEventListener('click', function () {
-                smoothNudge(340);
+                smoothNudge(itemStep);
             });
         }
 
@@ -906,6 +906,9 @@
         } else {
             window.addEventListener('load', start, { once: true });
         }
+
+        setTimeout(recalculate, 0);
+        requestAnimationFrame(recalculate);
 
         window.addEventListener('resize', recalculate);
 
