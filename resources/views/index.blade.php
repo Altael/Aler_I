@@ -366,9 +366,9 @@
             </div>
             <a href="#kontakt" class="bg-job-1 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
-        <div class="relative w-[575px] h-[555px]">
-            <img class="absolute right-0 top-0 w-[367px] h-[513px] object-cover grayscale rounded-[30px]" src="img/job-list-1-2.png" alt="Innenausbau Detail 2">
-            <img class="absolute left-0 bottom-0 w-[297px] h-[402px] object-cover grayscale rounded-[30px]" src="img/job-list-1.png" alt="Innenausbau Detail 1">
+        <div class="relative w-[320px] h-[310px] md:w-[575px] md:h-[555px]">
+            <img class="absolute right-0 top-0 w-[205px] h-[286px] md:w-[367px] md:h-[513px] object-cover grayscale rounded-[18px] md:rounded-[30px]" src="img/job-list-1-2.png" alt="Innenausbau Detail 2">
+            <img class="absolute left-0 bottom-0 w-[165px] h-[220px] md:w-[297px] md:h-[402px] object-cover grayscale rounded-[18px] md:rounded-[30px]" src="img/job-list-1.png" alt="Innenausbau Detail 1">
         </div>
     </div>
 </article>
@@ -413,9 +413,9 @@
             </div>
             <a href="#kontakt" class="bg-job-3 text-white font-bold font-[Roboto] py-[8px] px-[24px] rounded-[45px] uppercase">Jetzt anfragen</a>
         </div>
-        <div class="relative w-[575px] h-[690px]">
-            <img class="absolute left-0 top-0 w-[460px] h-[643px] object-cover grayscale rounded-[30px]" src="img/job-list-3-2.png" alt="Komplettservice Detail 1">
-            <img class="absolute right-0 bottom-0 w-[371px] h-[502px] object-cover grayscale rounded-[30px]" src="img/job-list-3.png" alt="Komplettservice Detail 2">
+        <div class="relative w-[320px] h-[384px] md:w-[575px] md:h-[690px]">
+            <img class="absolute left-0 top-0 w-[256px] h-[357px] md:w-[460px] md:h-[643px] object-cover grayscale rounded-[18px] md:rounded-[30px]" src="img/job-list-3-2.png" alt="Komplettservice Detail 1">
+            <img class="absolute right-0 bottom-0 w-[206px] h-[279px] md:w-[371px] md:h-[502px] object-cover grayscale rounded-[18px] md:rounded-[30px]" src="img/job-list-3.png" alt="Komplettservice Detail 2">
         </div>
     </div>
 </article>
@@ -574,7 +574,7 @@
     </div>
 </section>
 
-<nav id="kontakt" class="py-[50px] md:py-[90px] px-[20px] max-w-[1328px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-[58px]">
+<nav id="kontakt" class="py-[50px] md:py-[90px] px-[20px] max-w-fit lg:max-w-[1328px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-[58px]">
     <div class="flex flex-col gap-[50px] md:gap-[72px]">
         <div class="flex flex-col gap-[16px] items-start">
             <img src="img/logo-mini.svg" alt="schcherban">
